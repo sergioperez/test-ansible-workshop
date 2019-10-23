@@ -3,13 +3,13 @@
   hosts: web
   tasks:
   - name: latest Apache version installed
-    yum:
+    yum_fake_module:
       name: httpd
       state: latest
     tags:
       - cowsay
   - name: latest firewalld version installed
-    yum:
+    yum_fake_module:
       name: firewalld
       state: latest
   - name: firewalld enabled and running
@@ -32,11 +32,11 @@
 
   - name: Check if EPEL repo is already configured.
     stat:
-      path: "/etc/yum.repos.d/epel.repo"
+      path: "/etc/yum_fake_module.repos.d/epel.repo"
     register: epel_repofile_result
 
   - name: Install EPEL repo.
-    yum:
+    yum_fake_module:
       name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-{{ ansible_distribution_major_version }}.noarch.rpm"
       state: present
     register: result
@@ -52,6 +52,6 @@
     when: not epel_repofile_result.stat.exists
     ignore_errors: "{{ ansible_check_mode }}"
   - name: intall cowsay
-    yum:
+    yum_fake_module:
       name: cowsay
       state: latest
