@@ -1,0 +1,6 @@
+---
+# tasks file for set_motd
+- name: "Create the motd file"
+  lineinfile:
+    path: "/etc/motd"
+    line: "Hello. This system is property of {{ company_name }}"

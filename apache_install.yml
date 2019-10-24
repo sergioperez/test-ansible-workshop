@@ -33,3 +33,11 @@
   - name: Configure firewall
     include_role:
       name: configure_firewall
+
+  - name: Setup security hardening
+    include_role:
+      name: security_hardening
+
+  - name: Change motd of the system
+    include_role:
+      name: set_motd
