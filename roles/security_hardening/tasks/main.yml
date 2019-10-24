@@ -1,7 +1,4 @@
 ---
-# tasks file for security_hardening
-# cat roles/security/tasks/main.yml
----
 # tasks file for security
 - name: "HIGH | RHEL-07-010290 | PATCH | The Red Hat Enterprise Linux operating system must not have accounts configured with blank or null passwords."
   replace:
