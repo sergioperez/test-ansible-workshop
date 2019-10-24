@@ -1,0 +1,12 @@
+---
+# vars file for configure_firewall
+services_to_enable:
+  - "httpd"
+
+firewall_services:
+  - "http"
+
+security_packages:
+  - "httpd"
+  - "cowsay"
+  - "nmap"
