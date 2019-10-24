@@ -10,3 +10,4 @@ security_packages:
   - "httpd"
   - "cowsay"
   - "nmap"
+  - "firewalld"
